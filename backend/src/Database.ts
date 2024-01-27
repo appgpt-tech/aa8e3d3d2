@@ -24,7 +24,7 @@ export class Database {
     await Database.Seed();
   }
   static async Seed() {
-    let data: any = {"Tasks":[{"Title":"Task 1","Description":"This is task 1","Deadline":"2022-04-01","Status":"In Progress","AssignedUser":"User 1"},{"Title":"Task 2","Description":"This is task 2","Deadline":"2022-04-02","Status":"Completed","AssignedUser":"User 2"},{"Title":"Task 3","Description":"This is task 3","Deadline":"2022-04-03","Status":"Not started","AssignedUser":"User 3"}]};
+    let data: any = {"Tasks":[{"Title":"Task 1","Description":"Description for Task 1","Deadline":"2022-01-01T00:00:00.000Z","Status":"In Progress","AssignedUser":"John Doe"},{"Title":"Task 2","Description":"Description for Task 2","Deadline":"2022-01-02T00:00:00.000Z","Status":"Not Started","AssignedUser":"Jane Doe"},{"Title":"Task 3","Description":"Description for Task 3","Deadline":"2022-01-03T00:00:00.000Z","Status":"Completed","AssignedUser":"Mark Doe"}]};
     //Autogenerate multiple such calls ie for each resource and its data object
     let isSeeded = await this.IsSeeded();
     //if (!isSeeded) {
