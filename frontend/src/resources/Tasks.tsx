@@ -49,7 +49,7 @@ export const TasksList = () => (
         <DatagridConfigurable>
           <TextField source="Title" />
 <TextField source="Description" />
-<TextField source="Deadline" />
+<DateField source="Deadline" />
 <TextField source="Status" />
 <TextField source="AssignedUser" />
 <NumberField source="id" /><EditButton />
@@ -63,7 +63,7 @@ export const TasksEdit = () => (
                       <SimpleForm>
                           <TextInput source="Title"   />
 <TextInput source="Description"   />
-<TextInput source="Deadline"   />
+<DateInput source="Deadline"   />
 <TextInput source="Status"   />
 <TextInput source="AssignedUser"   />
 <NumberInput source="id"   disabled/>
@@ -76,7 +76,7 @@ export const TasksCreate = () => (
                                     <SimpleForm>
                                         <TextInput source="Title"   />
 <TextInput source="Description"   />
-<TextInput source="Deadline"   />
+<DateInput source="Deadline"   />
 <TextInput source="Status"   />
 <TextInput source="AssignedUser"   />
 <NumberInput source="id"   disabled/>
