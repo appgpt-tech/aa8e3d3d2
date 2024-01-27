@@ -3,7 +3,9 @@ import { DataSource } from "typeorm";
 import { DBConfiguration } from "./Configuration";
 import { SettingsEntity } from "./db/Settings.entity";
 //autogenerate imports based on resources
-import { TasksEntity } from "./db/Tasks.entity";
+import { ArtworksEntity } from "./db/Artworks.entity";
+import { ArtistsEntity } from "./db/Artists.entity";
+import { CollectionsEntity } from "./db/Collections.entity";
 
 export class Database {
   static dbConfiguration: DBConfiguration;
@@ -14,7 +16,7 @@ export class Database {
     let dbConfig: any = dbConfiguration as any;
     //Autogenerate entities array from resource names
 
-    dbConfig.entities = [SettingsEntity, TasksEntity];
+    dbConfig.entities = [SettingsEntity, ArtworksEntity, ArtistsEntity, CollectionsEntity];
     Database.ds = new DataSource(dbConfig);
     await Database.ds.initialize();
 
@@ -24,14 +26,16 @@ export class Database {
     await Database.Seed();
   }
   static async Seed() {
-    let data: any = {"Tasks":[{"title":"Complete project report","description":"Finalize and submit the project report by Tuesday","deadline":"2022-03-01","status":"pending","assignee":"John Doe"},{"title":"Team meeting","description":"Weekly team meeting to discuss progress and future plans","deadline":"2022-03-02","status":"done","assignee":"Jane Smith"},{"title":"Client presentation","description":"Create and present  the proposal to the client","deadline":"2022-03-10","status":"in progress","assignee":"Amanda White"}]};
+    let data: any = {"Artworks":[{"Title":"The Starry Night","Price":100000,"Artist":"Vincent van Gogh","Style":"Post-Impressionism"},{"Title":"The Persistence of Memory","Price":200000,"Artist":"Salvador Dali","Style":"Surrealism"},{"Title":"The Birth of Venus","Price":300000,"Artist":"Sandro Botticelli","Style":"Early Renaissance"}],"Artists":[{"Name":"Vincent van Gogh","Nationality":"Dutch","Birth year":1853},{"Name":"Salvador Dali","Nationality":"Spanish","Birth year":1904},{"Name":"Sandro Botticelli","Nationality":"Italian","Birth year":1445}],"Collections":[{"Collection name":"Impressionism collection","Budget":500000},{"Collection name":"Renaissance collection","Budget":1000000},{"Collection name":"Surrealism collection","Budget":700000}]};
     //Autogenerate multiple such calls ie for each resource and its data object
     let isSeeded = await this.IsSeeded();
     //if (!isSeeded) {
     //forcing app recreation
     if (true){
       console.log('   Seeding database...');
-      await this.SeedResource("TasksEntity", data.Tasks); 
+      await this.SeedResource("ArtworksEntity", data.Artworks);
+await this.SeedResource("ArtistsEntity", data.Artists);
+await this.SeedResource("CollectionsEntity", data.Collections); 
       await this.SeedResource("SettingsEntity", {
         settingname: "isSeeded",
         settingvalue: "true",
