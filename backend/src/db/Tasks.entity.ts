@@ -7,19 +7,19 @@ export class TasksEntity {
   id: number;
 
   @Column({nullable: true})
-Title: string;
+title: string;
 
 @Column({nullable: true})
-Description: string;
+description: string;
 
 @Column({nullable: true})
-Deadline: string;
+deadline: string;
 
 @Column({nullable: true})
-Status: string;
+status: string;
 
 @Column({nullable: true})
-AssignedUser: string;
+assignee: string;
 
 
 }
