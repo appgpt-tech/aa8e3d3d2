@@ -8,8 +8,12 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { TasksList, TasksCreate, TasksEdit} from "./resources/Tasks";
-import TasksIcon from "@mui/icons-material/TaskAlt"; 
+import { ArtworksList, ArtworksCreate, ArtworksEdit} from "./resources/Artworks";
+import { ArtistsList, ArtistsCreate, ArtistsEdit} from "./resources/Artists";
+import { CollectionsList, CollectionsCreate, CollectionsEdit} from "./resources/Collections";
+import ArtworksIcon from "@mui/icons-material/Brush";
+import ArtistsIcon from "@mui/icons-material/Person";
+import CollectionsIcon from "@mui/icons-material/CollectionsBookmark"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -71,12 +75,24 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Tasks" options={{label:"tasks"}} 
-list={TasksList}
-create={TasksCreate}
-edit={TasksEdit}
-recordRepresentation="title"
-icon={TasksIcon}/>
+    <Resource name="Artworks" options={{label:"artworks"}} 
+list={ArtworksList}
+create={ArtworksCreate}
+edit={ArtworksEdit}
+recordRepresentation="id"
+icon={ArtworksIcon}/>
+<Resource name="Artists" options={{label:"artists"}} 
+list={ArtistsList}
+create={ArtistsCreate}
+edit={ArtistsEdit}
+recordRepresentation="id"
+icon={ArtistsIcon}/>
+<Resource name="Collections" options={{label:"collections"}} 
+list={CollectionsList}
+create={CollectionsCreate}
+edit={CollectionsEdit}
+recordRepresentation="Collection name"
+icon={CollectionsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
