@@ -75,7 +75,7 @@ const App = () => (
 list={TasksList}
 create={TasksCreate}
 edit={TasksEdit}
-recordRepresentation="id"
+recordRepresentation="title"
 icon={TasksIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
