@@ -41,17 +41,17 @@ const ListActions = () => (
 );
 const TasksTitle = () => {
   const record = useRecordContext();
-  return <span>Tasks {record ? `"${ record.id }"` : ""}</span>;
+  return <span>Tasks {record ? `"${ record.title }"` : ""}</span>;
 };
 
 export const TasksList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="Title" />
-<TextField source="Description" />
-<DateField source="Deadline" />
-<TextField source="Status" />
-<TextField source="AssignedUser" />
+          <TextField source="title" />
+<TextField source="description" />
+<TextField source="deadline" />
+<TextField source="status" />
+<TextField source="assignee" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -61,11 +61,11 @@ export const TasksList = () => (
 export const TasksEdit = () => (
                     <Edit title={<TasksTitle />}>
                       <SimpleForm>
-                          <TextInput source="Title"   />
-<TextInput source="Description"   />
-<DateInput source="Deadline"   />
-<TextInput source="Status"   />
-<TextInput source="AssignedUser"   />
+                          <TextInput source="title"   />
+<TextInput source="description"   />
+<TextInput source="deadline"   />
+<TextInput source="status"   />
+<TextInput source="assignee"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -74,11 +74,11 @@ export const TasksEdit = () => (
 export const TasksCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="Title"   />
-<TextInput source="Description"   />
-<DateInput source="Deadline"   />
-<TextInput source="Status"   />
-<TextInput source="AssignedUser"   />
+                                        <TextInput source="title"   />
+<TextInput source="description"   />
+<TextInput source="deadline"   />
+<TextInput source="status"   />
+<TextInput source="assignee"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
