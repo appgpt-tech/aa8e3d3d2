@@ -26,7 +26,7 @@ export class Database {
     await Database.Seed();
   }
   static async Seed() {
-    let data: any = {"Artworks":[{"Title":"The Starry Night","Price":100000,"Artist":"Vincent van Gogh","Style":"Post-Impressionism"},{"Title":"The Persistence of Memory","Price":200000,"Artist":"Salvador Dali","Style":"Surrealism"},{"Title":"The Birth of Venus","Price":300000,"Artist":"Sandro Botticelli","Style":"Early Renaissance"}],"Artists":[{"Name":"Vincent van Gogh","Nationality":"Dutch","Birth year":1853},{"Name":"Salvador Dali","Nationality":"Spanish","Birth year":1904},{"Name":"Sandro Botticelli","Nationality":"Italian","Birth year":1445}],"Collections":[{"Collection name":"Impressionism collection","Budget":500000},{"Collection name":"Renaissance collection","Budget":1000000},{"Collection name":"Surrealism collection","Budget":700000}]};
+    let data: any = {"Artworks":[{"Title":"Mona Lisa","Price":1000000,"Artist":"Leonardo Da Vinci","Style":"Renaissance"},{"Title":"Starry Night","Price":2000000,"Artist":"Vincent Van Gogh","Style":"Post-Impressionism"},{"Title":"The Scream","Price":1200000,"Artist":"Edvard Munch","Style":"Expressionism"}],"Artists":[{"Name":"Leonardo Da Vinci","Nationality":"Italian","BirthYear":1452},{"Name":"Vincent Van Gogh","Nationality":"Dutch","BirthYear":1853},{"Name":"Edvard Munch","Nationality":"Norwegian","BirthYear":1863}],"Collections":[{"CollectionName":"Renaissance Masters","Budget":5000000},{"CollectionName":"Post-Impressionist Gems","Budget":6000000},{"CollectionName":"Expressionist Explosions","Budget":5500000}]};
     //Autogenerate multiple such calls ie for each resource and its data object
     let isSeeded = await this.IsSeeded();
     //if (!isSeeded) {
