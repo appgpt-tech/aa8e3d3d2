@@ -41,7 +41,7 @@ const ListActions = () => (
 );
 const ArtistsTitle = () => {
   const record = useRecordContext();
-  return <span>Artists {record ? `"${ record.id }"` : ""}</span>;
+  return <span>Artists {record ? `"${ record.Name }"` : ""}</span>;
 };
 
 export const ArtistsList = () => (
@@ -49,7 +49,7 @@ export const ArtistsList = () => (
         <DatagridConfigurable>
           <TextField source="Name" />
 <TextField source="Nationality" />
-<TextField source="Birth year" />
+<TextField source="BirthYear" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -61,7 +61,7 @@ export const ArtistsEdit = () => (
                       <SimpleForm>
                           <TextInput source="Name"   />
 <TextInput source="Nationality"   />
-<TextInput source="Birth year"   />
+<TextInput source="BirthYear"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -72,7 +72,7 @@ export const ArtistsCreate = () => (
                                     <SimpleForm>
                                         <TextInput source="Name"   />
 <TextInput source="Nationality"   />
-<TextInput source="Birth year"   />
+<TextInput source="BirthYear"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
