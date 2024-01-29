@@ -13,7 +13,7 @@ Name: string;
 Nationality: string;
 
 @Column({nullable: true})
-Birth year: string;
+BirthYear: string;
 
 
 }
