@@ -41,7 +41,7 @@ const ListActions = () => (
 );
 const ArtworksTitle = () => {
   const record = useRecordContext();
-  return <span>Artworks {record ? `"${ record.id }"` : ""}</span>;
+  return <span>Artworks {record ? `"${ record.Title }"` : ""}</span>;
 };
 
 export const ArtworksList = () => (
