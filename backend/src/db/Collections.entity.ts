@@ -7,7 +7,7 @@ export class CollectionsEntity {
   id: number;
 
   @Column({nullable: true})
-Collection name: string;
+CollectionName: string;
 
 @Column({nullable: true})
 Budget: string;
