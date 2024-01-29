@@ -11,9 +11,9 @@ import data from "./data";
 import { ArtworksList, ArtworksCreate, ArtworksEdit} from "./resources/Artworks";
 import { ArtistsList, ArtistsCreate, ArtistsEdit} from "./resources/Artists";
 import { CollectionsList, CollectionsCreate, CollectionsEdit} from "./resources/Collections";
-import ArtworksIcon from "@mui/icons-material/Brush";
+import ArtworksIcon from "@mui/icons-material/Palette";
 import ArtistsIcon from "@mui/icons-material/Person";
-import CollectionsIcon from "@mui/icons-material/CollectionsBookmark"; 
+import CollectionsIcon from "@mui/icons-material/Collections"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -79,19 +79,19 @@ const App = () => (
 list={ArtworksList}
 create={ArtworksCreate}
 edit={ArtworksEdit}
-recordRepresentation="id"
+recordRepresentation="Title"
 icon={ArtworksIcon}/>
 <Resource name="Artists" options={{label:"artists"}} 
 list={ArtistsList}
 create={ArtistsCreate}
 edit={ArtistsEdit}
-recordRepresentation="id"
+recordRepresentation="Name"
 icon={ArtistsIcon}/>
 <Resource name="Collections" options={{label:"collections"}} 
 list={CollectionsList}
 create={CollectionsCreate}
 edit={CollectionsEdit}
-recordRepresentation="Collection name"
+recordRepresentation="CollectionName"
 icon={CollectionsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
